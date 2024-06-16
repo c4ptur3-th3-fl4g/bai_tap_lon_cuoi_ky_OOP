@@ -17,8 +17,9 @@ public class GiangVienJFrame extends javax.swing.JFrame {
         
         GiangVienController controller = new GiangVienController(btnSubmit, jtfMaGiangVien, jtfHoTen, jdcNgaySinh,
                 jrdNam, jrdNu, jtfSoDienThoai, jtaDiaChi, jcbTinhTrang, jlbMsg);
-        //controller.setView();
-        //controller.setEvent();
+        GiangVien giangVien = new GiangVien(); // Create an instance of the GiangVien class
+        controller.setView(giangVien); // Pass the instance as an argument to the setView method
+        controller.setEvent();
                 
     }
 
