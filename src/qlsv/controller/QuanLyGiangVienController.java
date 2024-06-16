@@ -115,7 +115,7 @@ public class QuanLyGiangVienController {
 
                     giangVien.setTinh_trang(model.getValueAt(selectedRowIndex, 7).toString().equalsIgnoreCase("Đang dạy"));
 
-                    GiangVienJFrame frame = new GiangVienJFrame();
+                    GiangVienJFrame frame = new GiangVienJFrame(giangVien);
                     frame.setTitle("Thông tin giảng viên");
                     frame.setResizable(false);
                     frame.setLocationRelativeTo(null);
@@ -151,7 +151,7 @@ public class QuanLyGiangVienController {
             // Khi click vào nút thêm mới, sẽ hiện ra chỗ để điền thông tin sinh viên
             @Override
             public void mouseClicked(MouseEvent e) {  
-                GiangVienJFrame frame = new GiangVienJFrame();
+                GiangVienJFrame frame = new GiangVienJFrame(new GiangVien());
                 frame.setTitle("Thông tin giảng viên");
                 frame.setLocationRelativeTo(null);
                 frame.setResizable(false);
