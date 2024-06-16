@@ -12,14 +12,14 @@ public class GiangVienJFrame extends javax.swing.JFrame {
     /**
      * Creates new form GiangVienJFrame
      */
-    public GiangVienJFrame() {
+    public GiangVienJFrame(GiangVien giangVien) {
         initComponents();
         
-        GiangVienController controller = new GiangVienController(btnSubmit, jtfMaGiangVien, jtfHoTen, jdcNgaySinh,
+        GiangVienController  controller = new GiangVienController(btnSubmit, jtfGiangVien, jtfHoTen, jdcNgaySinh, 
                 jrdNam, jrdNu, jtfSoDienThoai, jtaDiaChi, jcbTinhTrang, jlbMsg);
-        GiangVien giangVien = new GiangVien(); // Create an instance of the GiangVien class
-        controller.setView(giangVien); // Pass the instance as an argument to the setView method
+        controller.setView(giangVien);
         controller.setEvent();
+
                 
     }
 
