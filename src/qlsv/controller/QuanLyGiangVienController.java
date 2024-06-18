@@ -36,16 +36,14 @@ public class QuanLyGiangVienController {
     private JButton btnAdd;
     private JButton btnDelete;
     private JTextField jtfSearch;
-
+    
     private GiangVienService giangVienService = null;
 
-    private  String[] listColumn = {"STT", "Mã Giảng Viên", "Họ Tên", "Ngày sinh", "Giới tính", "Số điện thoại", "Địa chỉ", "Tình trạng"};
-    
-    
+    private String[] listColumn = {"STT", "Mã Giảng Viên", "Họ Tên", "Ngày sinh", "Giới tính", "Số điện thoại", "Địa chỉ", "Tình trạng"};
+
     private DefaultTableModel tableModel;
     private TableRowSorter<TableModel> rowSorter = null;
     
-
     public QuanLyGiangVienController(JPanel jpnView, JButton btnAdd, JButton btnDelete, JTextField jtfSearch) {
         this.jpnView = jpnView;
         this.btnAdd = btnAdd;
@@ -57,10 +55,9 @@ public class QuanLyGiangVienController {
 
     public void setDateToTable() {
         List<GiangVien> listItem = giangVienService.getList();
-        
+
         DefaultTableModel model = new ClassTableModel().setTableGiangVien(listItem, listColumn);
         JTable table = new JTable(model);
-        
 
         rowSorter = new TableRowSorter<>(table.getModel());
         table.setRowSorter(rowSorter);
@@ -79,7 +76,7 @@ public class QuanLyGiangVienController {
             @Override
             public void removeUpdate(DocumentEvent e) {
                 String text = jtfSearch.getText();
-                if (text.trim().length() == 0) {
+                if(text.trim().length() == 0) {
                     rowSorter.setRowFilter(null);
                 } else {
                     rowSorter.setRowFilter(RowFilter.regexFilter("(?i)" + text));
@@ -90,12 +87,14 @@ public class QuanLyGiangVienController {
             public void changedUpdate(DocumentEvent e) {
                 
             }
-            
-        });
+
+
+
+        }); 
 
         table.addMouseListener(new MouseAdapter() {
-           @Override
-           public void mouseClicked(MouseEvent e) {
+            @Override
+            public void mouseClicked(MouseEvent e) {
                 if(e.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     DefaultTableModel model = (DefaultTableModel) table.getModel();
                     int selectedRowIndex = table.getSelectedRow();
@@ -113,7 +112,7 @@ public class QuanLyGiangVienController {
                     giangVien.setDia_chi(model.getValueAt(selectedRowIndex, 6) != null ? 
                             model.getValueAt(selectedRowIndex, 6).toString() : "");
 
-                    giangVien.setTinh_trang(model.getValueAt(selectedRowIndex, 7).toString().equalsIgnoreCase("Đang dạy"));
+                    giangVien.setTinh_trang(model.getValueAt(selectedRowIndex, 7).toString().equalsIgnoreCase("Vẫn còn dạy"));
 
                     GiangVienJFrame frame = new GiangVienJFrame(giangVien);
                     frame.setTitle("Thông tin giảng viên");
@@ -124,8 +123,6 @@ public class QuanLyGiangVienController {
 
                 }
            }
-        
-            
         });
 
         table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 14));
@@ -145,10 +142,9 @@ public class QuanLyGiangVienController {
         jpnView.repaint();
     }
 
-    
     public void setEvent() {
         btnAdd.addMouseListener(new MouseAdapter() {
-            // Khi click vào nút thêm mới, sẽ hiện ra chỗ để điền thông tin giảng viên
+            // Khi click vào nút thêm mới, sẽ hiện ra chỗ để điền thông tin sinh viên
             @Override
             public void mouseClicked(MouseEvent e) {  
                 GiangVienJFrame frame = new GiangVienJFrame(new GiangVien());
@@ -172,8 +168,5 @@ public class QuanLyGiangVienController {
             }
         });
 
-       
-                
     }
-
 }

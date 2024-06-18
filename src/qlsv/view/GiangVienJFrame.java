@@ -15,11 +15,10 @@ public class GiangVienJFrame extends javax.swing.JFrame {
     public GiangVienJFrame(GiangVien giangVien) {
         initComponents();
         
-        GiangVienController  controller = new GiangVienController(btnSubmit, jtfMaGiangVien, jtfHoTen, jdcNgaySinh, 
+        GiangVienController controller = new GiangVienController(btnSubmit, jtfMaGiangVien, jtfHoTen, jdcNgaySinh,
                 jrdNam, jrdNu, jtfSoDienThoai, jtaDiaChi, jcbTinhTrang, jlbMsg);
         controller.setView(giangVien);
         controller.setEvent();
-
                 
     }
 
@@ -259,9 +258,7 @@ public class GiangVienJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jcbTinhTrangActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSubmit;

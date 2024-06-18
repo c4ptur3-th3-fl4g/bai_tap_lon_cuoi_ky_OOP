@@ -46,6 +46,4 @@ public class DanhMucBean {
         this.jlb = jlb;
     }
     
-
-
 }

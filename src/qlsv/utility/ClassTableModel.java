@@ -4,13 +4,14 @@ import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import qlsv.model.GiangVien;
 import qlsv.model.SinhVien;
+
 /**
  *
  * @author trand
  */
 public class ClassTableModel {
     
-    public DefaultTableModel setTableSinhVien(List<SinhVien> listItem, String[] listColumn) {
+    public DefaultTableModel setTableSinhVien(List<SinhVien> listItem, String[] listColum) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -19,8 +20,8 @@ public class ClassTableModel {
             
         };
         
-        dtm.setColumnIdentifiers(listColumn);
-        int columns = listColumn.length;
+        dtm.setColumnIdentifiers(listColum);
+        int columns = listColum.length;
         Object[] obj = null;
         int rows = listItem.size();
         if(rows > 0) {
@@ -42,8 +43,8 @@ public class ClassTableModel {
 
         return dtm;
     }
-
-    public DefaultTableModel setTableGiangVien(List<GiangVien> listItem, String[] listColumn) {
+    
+    public DefaultTableModel setTableGiangVien(List<GiangVien> listItem, String[] listColum) {
         DefaultTableModel dtm = new DefaultTableModel() {
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -52,8 +53,8 @@ public class ClassTableModel {
             
         };
         
-        dtm.setColumnIdentifiers(listColumn);
-        int columns = listColumn.length;
+        dtm.setColumnIdentifiers(listColum);
+        int columns = listColum.length;
         Object[] obj = null;
         int rows = listItem.size();
         if(rows > 0) {

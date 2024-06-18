@@ -71,22 +71,19 @@ public class ChuyenManHinhController {
                 case "TrangChu":
                     node = new TrangChuJPanel();
                     break;
-                case "GiangVien":
-                    node = new GiangVienJPanel();
-                    break;
                 case "SinhVien":  
                     node = new SinhVienJPanel();
                     break;
                 case "KhoaHoc":
                     node = new KhoaHocJPanel();
                     break;
+                case "GiangVien":
+                    node = new GiangVienJPanel();
+                    break;
+                //more...
                 case "ThongKe":
                     node = new ThongKeJPanel();
                     break;
-                
-                        
-                //more...
-                    
                 default:
                     node = new TrangChuJPanel();
                     break;

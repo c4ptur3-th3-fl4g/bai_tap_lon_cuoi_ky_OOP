@@ -61,7 +61,7 @@ public class SinhVienController {
     public void setView(SinhVien sinhVien) {
         this.sinhVien = sinhVien;
         
-        jtfMaSinhVien.setText("#" + sinhVien.getMa_sinh_vien());
+        jtfMaSinhVien.setText("PKA" + sinhVien.getMa_sinh_vien());
         // jtfMaSinhVien.setText("");
         jtfHoTen.setText(sinhVien.getHo_ten());
         jdcNgaySinh.setDate(sinhVien.getNgay_sinh());
@@ -101,7 +101,7 @@ public class SinhVienController {
                     if(lastId > 0) {                       
                         sinhVien.setMa_sinh_vien(lastId);   
                         String lastIdString = String.valueOf(lastId);     
-                        jtfMaSinhVien.setText("#" + lastId);
+                        jtfMaSinhVien.setText( "PKA" + lastId);
                         jlbMsg.setText("Lưu dữ liệu thành công!");
                     }
                 }

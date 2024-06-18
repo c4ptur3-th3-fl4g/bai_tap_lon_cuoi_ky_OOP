@@ -6,7 +6,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-
 import qlsv.model.SinhVien;
 
 
@@ -51,6 +50,7 @@ public class SinhVienDAOImpl implements SinhVienDAO {
             Connection cons = DBConnect.getConnection();
             String sql = "INSERT INTO sinh_vien(ma_sinh_vien, ho_ten, ngay_sinh, gioi_tinh, so_dien_thoai, dia_chi, tinh_trang) VALUES(?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE ho_ten = VALUES(ho_ten), ngay_sinh = VALUES(ngay_sinh), gioi_tinh = VALUES(gioi_tinh), so_dien_thoai = VALUES(so_dien_thoai), dia_chi = VALUES(dia_chi), tinh_trang = VALUES(tinh_trang);";
             PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            
             ps.setInt(1, sinhVien.getMa_sinh_vien());
             ps.setString(2, sinhVien.getHo_ten());
             ps.setDate(3, new Date(sinhVien.getNgay_sinh().getTime()));

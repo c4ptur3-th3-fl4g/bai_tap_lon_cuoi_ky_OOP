@@ -30,8 +30,8 @@ public class SinhVienJPanel extends javax.swing.JPanel {
         jpnRoot = new javax.swing.JPanel();
         btnAdd = new javax.swing.JButton();
         jtfSearch = new javax.swing.JTextField();
-        jpnView = new javax.swing.JPanel();
         btnDelete = new javax.swing.JButton();
+        jpnView = new javax.swing.JPanel();
 
         jLabel1.setText("jLabel1");
 
@@ -52,9 +52,21 @@ public class SinhVienJPanel extends javax.swing.JPanel {
         jtfSearch.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jtfSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfSearch.setToolTipText("");
+        jtfSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jtfSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jtfSearchActionPerformed(evt);
+            }
+        });
+
+        btnDelete.setBackground(new java.awt.Color(204, 0, 51));
+        btnDelete.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
+        btnDelete.setText("XÓA THÔNG TIN");
+        btnDelete.setBorder(null);
+        btnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnDeleteActionPerformed(evt);
             }
         });
 
@@ -68,17 +80,6 @@ public class SinhVienJPanel extends javax.swing.JPanel {
             jpnViewLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 334, Short.MAX_VALUE)
         );
-
-        btnDelete.setBackground(new java.awt.Color(204, 0, 51));
-        btnDelete.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        btnDelete.setForeground(new java.awt.Color(255, 255, 255));
-        btnDelete.setText("XÓA THÔNG TIN");
-        btnDelete.setBorder(null);
-        btnDelete.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnDeleteActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jpnRootLayout = new javax.swing.GroupLayout(jpnRoot);
         jpnRoot.setLayout(jpnRootLayout);
@@ -101,7 +102,7 @@ public class SinhVienJPanel extends javax.swing.JPanel {
                         .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(24, 24, 24)
-                .addComponent(jpnView, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jpnView, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

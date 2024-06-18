@@ -1,10 +1,15 @@
 package qlsv.service;
+
 import java.util.List;
 import qlsv.dao.GiangVienDAO;
 import qlsv.dao.GiangVienDAOImpl;
 import qlsv.model.GiangVien;
 
-public class GiangVienServiceImpl implements GiangVienService { 
+/**
+ *
+ * @author trand
+ */
+public class GiangVienServiceImpl implements GiangVienService {
     private GiangVienDAO giangVienDAO = null;
 
     public GiangVienServiceImpl() {
@@ -16,6 +21,7 @@ public class GiangVienServiceImpl implements GiangVienService {
         return giangVienDAO.getList();
     }
 
+    @Override
     public int createOrUpdate(GiangVien giangVien) {
         return giangVienDAO.createOrUpdate(giangVien);
     }

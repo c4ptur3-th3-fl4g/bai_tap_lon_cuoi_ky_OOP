@@ -40,7 +40,6 @@ public class GiangVienJPanel extends javax.swing.JPanel {
         btnAdd.setBorder(null);
 
         jtfSearch.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jtfSearch.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jtfSearch.setToolTipText("");
         jtfSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
 
