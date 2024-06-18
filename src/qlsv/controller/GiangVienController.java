@@ -22,9 +22,9 @@ import qlsv.service.GiangVienServiceImpl;
  *
  * @author trand
  */
-public class GiangVienController {
-    private JButton btnSubmit;
-    private JTextField jtfMaGiangVien;
+public class GiangVienController { 
+    private JButton btnSubmit; // khai báo nút thêm mới
+    private JTextField jtfMaGiangVien; // khai báo ô mã giảng viên
     private JTextField jtfHoTen;
     private JDateChooser jdcNgaySinh;
     private JRadioButton jrdNam;
@@ -34,12 +34,12 @@ public class GiangVienController {
     private JCheckBox jcbTinhTrang;
     private JLabel jlbMsg;
 
-    private GiangVien giangVien = null;
-    private GiangVienService giangVienService = null;
+    private GiangVien giangVien = null; // khai báo giảng viên
+    private GiangVienService giangVienService = null; // khai báo service
 
-    public GiangVienController(JButton btnSubmit, JTextField jtfMaGiangVien, JTextField jtfHoTen,
+    public GiangVienController(JButton btnSubmit, JTextField jtfMaGiangVien, JTextField jtfHoTen, 
             JDateChooser jdcNgaySinh, JRadioButton jrdNam, JRadioButton jrdNu, 
-            JTextField jtfSoDienThoai, JTextArea jtaDiaChi, JCheckBox jcbTinhTrang, JLabel jlbMsg) {
+            JTextField jtfSoDienThoai, JTextArea jtaDiaChi, JCheckBox jcbTinhTrang, JLabel jlbMsg) { // khởi tạo các biến
                 
         this.btnSubmit = btnSubmit;
         this.jtfMaGiangVien = jtfMaGiangVien;
@@ -105,12 +105,12 @@ public class GiangVienController {
                 }
             }
 
-            @Override
+            @Override // thay đổi màu nền khi di chuột vào nút
             public void mouseEntered(MouseEvent e) {
                 btnSubmit.setBackground(new Color(0, 200, 83));
             }
             
-            @Override
+            @Override // thay đổi màu nền khi di chuột ra khỏi nút
             public void mouseExited(MouseEvent e) {
                 btnSubmit.setBackground(new Color(100, 221, 23));
             }

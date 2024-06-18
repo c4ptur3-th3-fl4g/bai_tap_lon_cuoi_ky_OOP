@@ -16,11 +16,11 @@ public class GiangVienDAOImpl implements GiangVienDAO {
     
     @Override
     public List<GiangVien> getList() {
-        Connection cons = DBConnect.getConnection();
-        String sql = "SELECT * FROM giang_vien";
+        Connection cons = DBConnect.getConnection(); 
+        String sql = "SELECT * FROM giang_vien"; //nhận tất cả dữ liệu từ bảng giang_vien
         List<GiangVien> list = new ArrayList<>();
         try {
-            PreparedStatement ps = cons.prepareStatement(sql);
+            PreparedStatement ps = cons.prepareStatement(sql); // tạo câu lệnh truy vấn
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 GiangVien giangVien = new GiangVien();
@@ -36,7 +36,7 @@ public class GiangVienDAOImpl implements GiangVienDAO {
             ps.close();
             cons.close();
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(); // in lỗi
         }
         return list;
     }
@@ -46,9 +46,9 @@ public class GiangVienDAOImpl implements GiangVienDAO {
         try {
             Connection cons = DBConnect.getConnection();
             String sql = "INSERT INTO giang_vien(ma_giang_vien, ho_ten, ngay_sinh, gioi_tinh, so_dien_thoai, dia_chi, tinh_trang) VALUES(?, ?, ?, ?, ?, ?, ?) ON DUPLICATE KEY UPDATE ho_ten = VALUES(ho_ten), ngay_sinh = VALUES(ngay_sinh), gioi_tinh = VALUES(gioi_tinh), so_dien_thoai = VALUES(so_dien_thoai), dia_chi = VALUES(dia_chi), tinh_trang = VALUES(tinh_trang);";
-            PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = cons.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS); // trả về id của bản ghi vừa thêm
 
-            ps.setInt(1, giangVien.getMa_giang_vien());
+            ps.setInt(1, giangVien.getMa_giang_vien()); // set giá trị cho các tham số
             ps.setString(2, giangVien.getHo_ten());
             ps.setDate(3, new Date(giangVien.getNgay_sinh().getTime()));
             ps.setBoolean(4, giangVien.isGioi_tinh());

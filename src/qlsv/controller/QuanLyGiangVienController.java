@@ -32,14 +32,14 @@ import qlsv.view.GiangVienJFrame;
  */
 public class QuanLyGiangVienController {
     
-    private JPanel jpnView;
-    private JButton btnAdd;
-    private JButton btnDelete;
-    private JTextField jtfSearch;
+    private JPanel jpnView; // khai báo panel
+    private JButton btnAdd; // khai báo nút thêm mới
+    private JButton btnDelete; // khai báo nút xóa
+    private JTextField jtfSearch; // khai báo ô tìm kiếm
     
     private GiangVienService giangVienService = null;
 
-    private String[] listColumn = {"STT", "Mã Giảng Viên", "Họ Tên", "Ngày sinh", "Giới tính", "Số điện thoại", "Địa chỉ", "Tình trạng"};
+    private String[] listColumn = {"STT", "Mã Giảng Viên", "Họ Tên", "Ngày sinh", "Giới tính", "Số điện thoại", "Địa chỉ", "Tình trạng"}; //tạo cột cho bảng
 
     private DefaultTableModel tableModel;
     private TableRowSorter<TableModel> rowSorter = null;
@@ -54,9 +54,9 @@ public class QuanLyGiangVienController {
     }
 
     public void setDateToTable() {
-        List<GiangVien> listItem = giangVienService.getList();
+        List<GiangVien> listItem = giangVienService.getList(); // lấy dữ liệu từ database
 
-        DefaultTableModel model = new ClassTableModel().setTableGiangVien(listItem, listColumn);
+        DefaultTableModel model = new ClassTableModel().setTableGiangVien(listItem, listColumn); // tạo bảng với dữ liệu từ listItem và cột từ listColumn
         JTable table = new JTable(model);
 
         rowSorter = new TableRowSorter<>(table.getModel());
@@ -92,9 +92,9 @@ public class QuanLyGiangVienController {
 
         }); 
 
-        table.addMouseListener(new MouseAdapter() {
+        table.addMouseListener(new MouseAdapter() { // khi click đúp vào một hàng trong bảng, sẽ hiện ra thông tin chi tiết của giảng viên
             @Override
-            public void mouseClicked(MouseEvent e) {
+            public void mouseClicked(MouseEvent e) { //click vào hàng
                 if(e.getClickCount() == 2 && table.getSelectedRow() != -1) {
                     DefaultTableModel model = (DefaultTableModel) table.getModel();
                     int selectedRowIndex = table.getSelectedRow();

@@ -9,6 +9,6 @@ import qlsv.model.GiangVien;
  */
 public interface GiangVienDAO {
     
-    public List<GiangVien> getList();
-    public int createOrUpdate(GiangVien giangVien);
+    public List<GiangVien> getList(); // return list of GiangVien
+    public int createOrUpdate(GiangVien giangVien); // return 1 if success, 0 if fail
 }

@@ -10,18 +10,18 @@ import qlsv.model.GiangVien;
  * @author trand
  */
 public class GiangVienServiceImpl implements GiangVienService {
-    private GiangVienDAO giangVienDAO = null;
+    private GiangVienDAO giangVienDAO = null; // khai báo giảng viên DAO
 
-    public GiangVienServiceImpl() {
+    public GiangVienServiceImpl() { // khởi tạo giảng viên DAO
         giangVienDAO = new GiangVienDAOImpl();
     }
 
-    @Override
+    @Override // lấy danh sách giảng viên
     public List<GiangVien> getList() {
         return giangVienDAO.getList();
     }
 
-    @Override
+    @Override // thêm hoặc cập nhật giảng viên
     public int createOrUpdate(GiangVien giangVien) {
         return giangVienDAO.createOrUpdate(giangVien);
     }
