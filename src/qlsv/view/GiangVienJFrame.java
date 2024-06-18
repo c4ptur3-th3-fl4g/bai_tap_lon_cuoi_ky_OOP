@@ -290,7 +290,7 @@ public class GiangVienJFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new GiangVienJFrame().setVisible(true);
+                new GiangVienJFrame(null).setVisible(true);
             }
         });
     }
