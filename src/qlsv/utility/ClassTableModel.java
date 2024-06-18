@@ -67,7 +67,7 @@ public class ClassTableModel {
                 obj[4] = giangVien.isGioi_tinh() == true ? "Nam" : "Nữ";
                 obj[5] = giangVien.getSo_dien_thoai();
                 obj[6] = giangVien.getDia_chi();
-                obj[7] = giangVien.isTinh_trang() == true ? "Đang học" : "Đã nghỉ học";
+                obj[7] = giangVien.isTinh_trang() == true ? "Đang dạy" : "Đã nghỉ dạy";
                 dtm.addRow(obj);
             }
         }

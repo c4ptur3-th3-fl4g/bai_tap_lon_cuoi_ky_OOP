@@ -14,8 +14,8 @@ public class GiangVienJPanel extends javax.swing.JPanel {
         initComponents();
         
         QuanLyGiangVienController controller = new QuanLyGiangVienController(jpnView, btnAdd, btnDelete, jtfSearch);
-        //controller.setDateToTable();
-        //controller.setEvent();
+        controller.setDateToTable();
+        controller.setEvent();
     }
 
     /**

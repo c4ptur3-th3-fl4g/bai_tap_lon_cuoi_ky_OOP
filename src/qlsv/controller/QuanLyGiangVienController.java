@@ -148,7 +148,7 @@ public class QuanLyGiangVienController {
     
     public void setEvent() {
         btnAdd.addMouseListener(new MouseAdapter() {
-            // Khi click vào nút thêm mới, sẽ hiện ra chỗ để điền thông tin sinh viên
+            // Khi click vào nút thêm mới, sẽ hiện ra chỗ để điền thông tin giảng viên
             @Override
             public void mouseClicked(MouseEvent e) {  
                 GiangVienJFrame frame = new GiangVienJFrame(new GiangVien());

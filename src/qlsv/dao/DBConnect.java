@@ -8,8 +8,10 @@ public class DBConnect {
     public static Connection getConnection() {
         Connection cons = null;
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            cons = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_qlsv", "root", "002525");
+            Class.forName("org.mariadb.jdbc.Driver"); //cho MariaDB
+            //Class.forName("com.mysql.cj.jdbc.Driver"); //cho MySQL
+            cons = DriverManager.getConnection("jdbc:mariadb://localhost:3306/db_qlsv", "root", "Phuongk16cntt2!@"); //cho MariaDB
+            //cons = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_qlsv", "root", "Phuongk16cntt2!@"); //cho MySQL
         } catch (Exception e) {
             e.printStackTrace();
         }

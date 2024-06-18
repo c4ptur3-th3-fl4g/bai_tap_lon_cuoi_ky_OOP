@@ -29,8 +29,8 @@ public class GiangVienDAOImpl implements GiangVienDAO{
             }
             ps.close();
             cons.close();
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
         return list;
     }
